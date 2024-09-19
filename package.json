@@ -1,0 +1,12 @@
+{
+  "name": "warp-fs",
+  "version": "1.0.0",
+  "description": "an npm package to better utilize node fs for handling large amount of data being written and read from disk",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
