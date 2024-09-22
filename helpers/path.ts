@@ -3,6 +3,7 @@ import  * as path from "node:path";
 
 interface IPath {
   getPath(fileName: string): string;
+  getSubDirectoryName(fileName: string): string;
 }
 export class Path implements IPath {
   private readonly basePath: string;
@@ -13,6 +14,9 @@ export class Path implements IPath {
 
   public getPath(fileName: string): string {
     return path.join(this.basePath, this.getHashedPath(fileName));
+  }
+  public getSubDirectoryName(fileName: string): string {
+      return this.getHashedPath(fileName)
   }
 
   private getHashedPath(fileName: string): string {
