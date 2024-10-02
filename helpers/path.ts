@@ -1,4 +1,5 @@
 import { createHash } from 'crypto'
+import { PathLike } from 'fs';
 import  * as path from "node:path";
 
 interface IPath {
@@ -13,10 +14,10 @@ export class Path implements IPath {
   }
 
   public getPath(fileName: string): string {
-    return path.join(this.basePath, this.getHashedPath(fileName));
+    return path.join(this.basePath, this.getHashedPath(fileName.toString()));
   }
-  public getSubDirectoryName(fileName: string): string {
-      return this.getHashedPath(fileName)
+  public getSubDirectoryName(fileName: PathLike): string {
+      return this.getHashedPath(fileName.toString())
   }
 
   private getHashedPath(fileName: string): string {
