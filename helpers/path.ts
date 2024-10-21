@@ -24,4 +24,7 @@ export class Path implements IPath {
     const hash = createHash('md5').update(fileName).digest('hex');
     return hash.slice(0, 3);
   }
+  private getHashedPath(fileName: string){
+    const hash = createhash('md5').update(fileName).digest('hex');
+  }
 }
